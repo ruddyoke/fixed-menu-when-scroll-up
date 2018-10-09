@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<header>
+
+        <nav class="navbar navbar-expand-md navbar-dark fixed-topXXX absolute-top bg-dark bg-transparent">
+            <div class="container">
+                <a class="navbar-brand" href="/">Ma Page</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse mr-0" id="navbarCollapse">
+                    <ul class="navbar-nav m-auto text-center justify-content-center">
+                        <li class='nav-item'><a class='nav-link' href='#'>Lien 1</a></li>
+                        <li class='nav-item'><a class='nav-link' href='#'>Lien 2</a></li>
+                        <li class='nav-item'><a class='nav-link' href='#'>Lien 3</a></li>
+                    </ul>
+                    <form class="form-inline mt-2 mt-md-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+
+    </div>
+</header>
+<!-- FIN HEADER -->
+
+<!-- CONTENT -->
+<main role="main">
+    <div class="container" style="padding: 50px 15px;">
+        <div class="row">
+            <div class="col">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum distinctio, eaque enim facere modi nam 
+                    nisi non nostrum omnis quod, sequi sunt temporibus. Deleniti dignissimos ex officia sunt tempora unde!
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- FIN CONTENT -->
+
+<!-- Bootstrap core JavaScript + modernizr + common.js
+================================================== -->
+
+<script src="/js/jquery3.min.js"></script>
+<script src="/js/popper.1.14.3.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script>
+    function menuFixedHandler(){
+        if ($('header nav.navbar').length) {
+            var oldScrollTop = 0;
+            var scrollStep = 50;
+            $(window).bind('scroll', function () {
+                //console.log($(window).scrollTop());
+                if(Math.abs($(window).scrollTop() - oldScrollTop) > scrollStep){
+                    var menu =$('header nav.navbar');
+                    if ($(window).scrollTop() < oldScrollTop ) {
+                        menu.addClass('fixed-top');
+                    } else {
+                        menu.removeClass('fixed-top');
+                    }
+                    oldScrollTop = $(window).scrollTop();
+                }
+            });
+        }
+    }
+    $(function(){
+        menuFixedHandler();
+    })
+</script>
+
+</body>
+</html>
